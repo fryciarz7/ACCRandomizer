@@ -8,6 +8,8 @@ namespace ACCRandomizer.Model
 {
     public class DatabaseContext : DbContext
     {
+        public DbSet<Car> Cars { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=AccRandomizerDb.db");
