@@ -1,3 +1,4 @@
+using ACCRandomizer.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +25,7 @@ namespace ACCRandomizer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddEntityFrameworkSqlite().AddDbContext<DatabaseContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +53,11 @@ namespace ACCRandomizer
             {
                 endpoints.MapRazorPages();
             });
+
+            using (var client = new DatabaseContext())
+            {
+                client.Database.EnsureCreated();
+            }
         }
     }
 }
