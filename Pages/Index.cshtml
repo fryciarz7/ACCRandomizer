@@ -1,10 +1,15 @@
 ﻿@page
 @model IndexModel
+@using ACCRandomizer.Enums;
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "ACC Randomizer";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <select class="form-control"
+            asp-items="Html.GetEnumSelectList<Enums.CarClassEnum>()">
+        <option>Select type ...</option>
+    </select>
 </div>
