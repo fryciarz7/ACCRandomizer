@@ -1,4 +1,12 @@
 ﻿@page
-@model ACCRandomizer.Pages.AddCarModel
+@model ACCRandomizer.Model.Car
+@using ACCRandomizer.Enums;
 @{
 }
+
+<p>Car Name:</p> @Html.TextBoxFor(m => m.CarName)
+<p>Car Class:</p>
+<select class="form-control"
+        asp-items="Html.GetEnumSelectList<Enums.CarClassEnum>()">
+    <option>Select type ...</option>
+</select>
