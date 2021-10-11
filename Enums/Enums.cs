@@ -25,17 +25,5 @@ namespace ACCRandomizer.Enums
             [Display(Name = "GT4")]
             GT4 = 4
         }
-
-        public enum SeriesEnum
-        {
-            [Display(Name = "2018")]
-            s2018 = 2018,
-
-            [Display(Name = "2019")]
-            s2019 = 2019,
-
-            [Display(Name = "2020")]
-            s2020 = 2020
-        }
     }
 }
