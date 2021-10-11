@@ -9,6 +9,7 @@ namespace ACCRandomizer.Model
     public class DatabaseContext : DbContext
     {
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Series> Series { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
